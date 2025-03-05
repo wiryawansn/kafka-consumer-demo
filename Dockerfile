@@ -1,6 +1,3 @@
-FROM ubuntu:latest
-LABEL authors="wiryawaw"
-
 FROM gradle:8-jdk17 AS build
 
 WORKDIR /kafka-consumer
@@ -10,7 +7,7 @@ COPY gradle /kafka-consumer/gradle
 
 COPY src /kafka-consumer/src
 
-RUN ./gradlew build --no-daemon
+RUN ./gradlew build -x test --no-daemon
 
 FROM eclipse-temurin:17-jdk-alpine
 

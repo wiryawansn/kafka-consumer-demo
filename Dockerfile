@@ -7,7 +7,7 @@ COPY gradle /kafka-consumer/gradle
 
 COPY src /kafka-consumer/src
 
-RUN ./gradlew build -x test --no-daemon
+RUN ./gradlew build --no-daemon
 
 FROM eclipse-temurin:17-jdk-alpine
 
